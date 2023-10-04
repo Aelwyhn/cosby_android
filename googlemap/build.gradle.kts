@@ -1,7 +1,7 @@
+@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    alias(libs.plugins.com.android.application)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.secrets.gradle.plugin)
+    alias(libs.plugins.com.android.library)
 }
 
 android {
@@ -9,16 +9,8 @@ android {
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.aelwyhn.cosby"
         minSdk = 26
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
     }
 
     buildTypes {
@@ -43,21 +35,18 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
     }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
 }
 
 dependencies {
 
-    implementation(libs.androidx.core)
-    implementation(libs.lifecycle.runtime)
-    implementation(libs.activity.compose)
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material)
+    androidTestImplementation(libs.compose.ui.test.junit)
+    androidTestImplementation(libs.compose.ui.test.manifest)
+    debugImplementation(libs.compose.ui.tooling)
 
-    implementation(project(":googlemap"))
+    implementation(libs.play.services.maps)
+    implementation(libs.maps.utils)
+    implementation(libs.maps.compose)
 }
