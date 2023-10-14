@@ -14,6 +14,9 @@ class SightsRenderer(
 ) : DefaultClusterRenderer<SightClusterItem>(context, map, clusterManager) {
 
     override fun onBeforeClusterItemRendered(item: SightClusterItem, markerOptions: MarkerOptions) {
+        markerOptions
+            .title(item.name)
+            .position(item.latLng)
     }
 
     override fun onClusterItemRendered(clusterItem: SightClusterItem, marker: Marker) {
