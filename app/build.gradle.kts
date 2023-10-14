@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.aelwyhn.cosby"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.aelwyhn.cosby"
         minSdk = 26
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
