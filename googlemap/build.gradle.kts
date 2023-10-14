@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.aelwyhn.cosby"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 26
@@ -47,6 +47,8 @@ dependencies {
     debugImplementation(libs.compose.ui.tooling)
 
     implementation(libs.play.services.maps)
+    implementation(libs.play.services.location)
+
     implementation(libs.maps.utils)
     implementation(libs.maps.compose)
 }
