@@ -9,6 +9,7 @@ activity-compose-version = "1.8.0"
 
 compose-ui-version = "1.5.3"
 compose-compiler = "1.4.0"
+compose-navigation-version = "2.7.4"
 
 junit-version = "4.13.2"
 
@@ -41,6 +42,7 @@ compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview"
 compose-ui-test-junit = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose-ui-version" }
 compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose-ui-version" }
 compose-material = { module = "androidx.compose.material:material", version.ref = "compose-ui-version" }
+compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "compose-navigation-version" }
 
 junit = { module = "junit:junit", version.ref = "junit-version" }
 kotlin-bom = { group = "org.jetbrains.kotlin", name = "kotlin-bom", version.ref = "kotlin-bom" }

@@ -17,7 +17,9 @@ import com.google.maps.android.compose.rememberCameraPositionState
 import kotlinx.coroutines.launch
 
 @Composable
-fun GoogleMapView() {
+fun GoogleMapView(
+    onNavigateNext: () -> Unit
+) {
     val mapProperties = MapProperties(
         isMyLocationEnabled = true
     )

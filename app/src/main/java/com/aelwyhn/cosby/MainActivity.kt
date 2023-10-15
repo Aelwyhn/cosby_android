@@ -7,8 +7,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
-import com.aelwyhn.cosby.ui.GoogleMapView
+import androidx.navigation.compose.rememberNavController
 import com.aelwyhn.cosby.ui.theme.CosbyTheme
+import com.aelwyhn.cosby.ui.theme.navigation.AppNavGraph
 import com.aelwyhn.cosby.utils.doIfLocationPermissionGranted
 
 private const val LOCATION_REQUEST_CODE = 1001
@@ -32,12 +33,13 @@ class MainActivity : ComponentActivity() {
 
     private fun setContent() {
         setContent {
+            val navController = rememberNavController()
             CosbyTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    GoogleMapView()
+                    AppNavGraph(navHostController = navController)
                 }
             }
         }
