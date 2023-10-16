@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "Cosby"
 include(":app")
 include(":googlemap")
+include(":common")

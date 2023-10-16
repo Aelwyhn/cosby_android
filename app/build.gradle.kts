@@ -64,5 +64,6 @@ dependencies {
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)
 
+    implementation(project(":common"))
     implementation(project(":googlemap"))
 }
