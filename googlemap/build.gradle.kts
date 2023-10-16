@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.com.android.library)
+    id("kotlin-kapt")
 }
 
 android {
@@ -46,6 +47,9 @@ dependencies {
     androidTestImplementation(libs.compose.ui.test.junit)
     androidTestImplementation(libs.compose.ui.test.manifest)
     debugImplementation(libs.compose.ui.tooling)
+
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
 
     implementation(libs.play.services.maps)
     implementation(libs.play.services.location)
