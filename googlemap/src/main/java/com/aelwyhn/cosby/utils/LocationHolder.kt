@@ -3,7 +3,7 @@ package com.aelwyhn.cosby.utils
 import android.location.Location
 import com.google.android.gms.location.FusedLocationProviderClient
 
-internal class LocationHolder(
+class LocationHolder(
     private val fusedLocationProvider: FusedLocationProviderClient
 ) {
 

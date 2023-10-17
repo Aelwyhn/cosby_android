@@ -6,10 +6,8 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import com.aelwyhn.cosby.extensions.animateToCenter
-import com.aelwyhn.cosby.utils.LocationHolder
 import com.aelwyhn.cosby.utils.configure
 import com.aelwyhn.cosby.utils.createClusterManager
-import com.google.android.gms.location.LocationServices
 import com.google.maps.android.compose.GoogleMap
 import com.google.maps.android.compose.MapEffect
 import com.google.maps.android.compose.MapProperties
@@ -17,7 +15,8 @@ import com.google.maps.android.compose.rememberCameraPositionState
 import kotlinx.coroutines.launch
 
 @Composable
-fun GoogleMapView(
+internal fun GoogleMapView(
+    viewModel: GoogleMapViewModel,
     onNavigateNext: () -> Unit
 ) {
     val mapProperties = MapProperties(
@@ -25,8 +24,6 @@ fun GoogleMapView(
     )
     val context = LocalContext.current
     val cameraPositionState = rememberCameraPositionState()
-    val viewModel =
-        MapViewModel(LocationHolder(LocationServices.getFusedLocationProviderClient(context)))
     GoogleMap(
         modifier = Modifier.fillMaxSize(),
         properties = mapProperties,
