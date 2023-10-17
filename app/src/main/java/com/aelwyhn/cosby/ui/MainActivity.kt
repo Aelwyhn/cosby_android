@@ -1,4 +1,4 @@
-package com.aelwyhn.cosby
+package com.aelwyhn.cosby.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,8 +8,8 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
+import com.aelwyhn.cosby.ui.navigation.AppNavGraph
 import com.aelwyhn.cosby.ui.theme.CosbyTheme
-import com.aelwyhn.cosby.ui.theme.navigation.AppNavGraph
 import com.aelwyhn.cosby.utils.doIfLocationPermissionGranted
 
 private const val LOCATION_REQUEST_CODE = 1001

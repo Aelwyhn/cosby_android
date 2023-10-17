@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.aelwyhn.cosby.ui.data.MapState
 import com.aelwyhn.cosby.utils.LocationHolder
 
-internal class MapViewModel(
+class GoogleMapViewModel(
     private val locationHolder: LocationHolder,
 ) : ViewModel() {
 

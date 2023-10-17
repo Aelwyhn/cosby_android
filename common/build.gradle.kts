@@ -2,15 +2,15 @@
 plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.com.android.library)
-    id("kotlin-kapt")
 }
 
 android {
-    namespace = "com.aelwyhn.cosby"
+    namespace = "com.aelwyhn.common"
     compileSdk = 34
 
     defaultConfig {
         minSdk = 26
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -30,32 +30,15 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
-    }
 }
 
 dependencies {
 
-    implementation(libs.compose.ui)
-    implementation(libs.compose.ui.tooling.preview)
-    implementation(libs.compose.material)
-    implementation(libs.compose.navigation)
-    androidTestImplementation(libs.compose.ui.test.junit)
-    androidTestImplementation(libs.compose.ui.test.manifest)
-    debugImplementation(libs.compose.ui.tooling)
+    implementation(libs.androidx.core)
+    implementation(libs.appcompat)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(libs.dagger)
-    kapt(libs.dagger.compiler)
-
-    implementation(libs.play.services.maps)
-    implementation(libs.play.services.location)
-
-    implementation(libs.maps.utils)
-    implementation(libs.maps.compose)
-
-    implementation(project(":common"))
 }

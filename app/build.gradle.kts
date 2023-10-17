@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.com.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.secrets.gradle.plugin)
+    id("kotlin-kapt")
 }
 
 android {
@@ -60,5 +61,9 @@ dependencies {
     implementation(libs.compose.material)
     implementation(libs.compose.navigation)
 
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
+
+    implementation(project(":common"))
     implementation(project(":googlemap"))
 }
